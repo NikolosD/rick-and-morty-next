@@ -1,0 +1,66 @@
+.body{
+  background-color: var(--color-dark-300);
+  color: var(--color-light-100);
+  &:hover{
+    background-color: var(--color-dark-100);
+    transition: 0.2s;
+  }
+}
+
+
+.container{
+  max-width: 294px;
+  max-height: 400px;
+}
+
+.nameContainer{
+  display: flex;
+  margin-right: 5px;
+  font-size: var(--font-size-xs);
+}
+
+.cardInfo{
+  margin-left: 4px;
+}
+
+.containerFooter{
+  margin-top: 24px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.headerName{
+  position: relative;
+}
+
+.heartContainer{
+ position: absolute;
+  right: 15px;
+  top: 240px;
+}
+
+/* character.module.scss */
+.heartContainer {
+  display: flex;
+  align-items: center;
+}
+
+.heartIcon {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.heartIconHidden {
+  opacity: 0;
+}
+
+.heartIconVisible {
+  opacity: 1;
+}
+
+.heartContainer:hover .heartIconHidden {
+  opacity: 1;
+}
+
+.heartContainer:hover .heartIconVisible {
+  opacity: 0;
+}

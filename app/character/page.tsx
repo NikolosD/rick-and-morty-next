@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import { useStore } from "@/src/stores/storeContext";
 import { Box, Heading, Button, Select } from "@chakra-ui/react";
 import Link from "next/link";
-import { Character } from "@/src/components/character";
+import { Character } from "@/src/components/character/character";
 
 const CharacterList = observer(() => {
   const { characterStore } = useStore();
@@ -31,16 +31,14 @@ const CharacterList = observer(() => {
         <option value="unknown">Unknown</option>
       </Select>
       {characterStore.filteredCharacters.map((char) => (
-        <Box key={char.id} p={4} borderWidth={1}>
-          <Character
-            name={char.name}
-            status={char.status}
-            species={char.species}
-            origin={char.origin}
-            image={char.image}
-          />
-          <Link href={`/character/${char.id}`}>View Details</Link>
-        </Box>
+        <Character
+          key={char.id}
+          name={char.name}
+          status={char.status}
+          species={char.species}
+          origin={char.origin}
+          image={char.image}
+        />
       ))}
     </Box>
   );

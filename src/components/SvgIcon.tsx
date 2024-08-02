@@ -8,7 +8,7 @@ interface SvgIconProps extends React.SVGProps<SVGSVGElement> {
 
 const SvgIcon: React.FC<SvgIconProps> = ({
   icon: Icon,
-  size = 24,
+  size = 48,
   color = "currentColor",
   ...props
 }) => {
@@ -23,8 +23,8 @@ const SvgIcon: React.FC<SvgIconProps> = ({
       }}
     >
       <Icon
-        width="100%"
-        height="100%"
+        width={size}
+        height={size}
         viewBox={`0 0 ${size} ${size}`}
         fill={color}
         {...props}
