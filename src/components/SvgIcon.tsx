@@ -12,7 +12,25 @@ const SvgIcon: React.FC<SvgIconProps> = ({
   color = "currentColor",
   ...props
 }) => {
-  return <Icon width={size} height={size} fill={color} {...props} />;
+  return (
+    <div
+      style={{
+        width: size,
+        height: size,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Icon
+        width="100%"
+        height="100%"
+        viewBox={`0 0 ${size} ${size}`}
+        fill={color}
+        {...props}
+      />
+    </div>
+  );
 };
 
 export default SvgIcon;

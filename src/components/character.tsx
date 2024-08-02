@@ -30,15 +30,15 @@ export const Character = ({
           <Heading size="md">{name}</Heading>
           <div className={s.nameContainer}>
             <SvgIcon icon={Alien} size={16} width={16} />
-            <Text>{status}</Text>
+            <Text className={s.cardInfo}>{status}</Text>
           </div>
           <div className={s.nameContainer}>
             <SvgIcon icon={Pulse} size={16} width={16} />
-            <Text>{species}</Text>
+            <Text className={s.cardInfo}>{species}</Text>
           </div>
           <div className={s.nameContainer}>
-            <SvgIcon icon={Planet} size={16} width={16} />
-            <Text>{origin.name}</Text>
+            <SvgIcon icon={Planet} size={16} width={16} viewBox={"0 0 24 24"} />
+            <Text className={s.cardInfo}>{origin.name}</Text>
           </div>
         </Stack>
       </CardBody>
