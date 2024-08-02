@@ -1,0 +1,14 @@
+.container{
+  background-color: var(--color-dark-300);
+  color: var(--color-light-100);
+  &:hover{
+    background-color: var(--color-dark-100);
+    transition: 0.2s;
+  }
+}
+
+.nameContainer{
+  display: flex;
+  margin-right: 5px;
+  font-size: var(--font-size-xs);
+}

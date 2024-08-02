@@ -34,14 +34,14 @@ interface CharacterDetailProps {
     id: number;
 }
 
-const CharacterDetail = observer(({ id }: { id: number }) => {
+const CharacterDetail = observer(({ params }: { params: { id: number } }) => {
     const { characterStore } = useStore();
 
     useEffect(() => {
-        characterStore.fetchCharacterById(id);
-    }, [characterStore, id]);
+        characterStore.fetchCharacterById(params.id);
+    }, [characterStore, params.id]);
 
-    const character = characterStore.characters.find((c) => c.id === id);
+    const character = characterStore.character;
 
     if (!character) {
         return <Text>Loading...</Text>;
@@ -54,7 +54,6 @@ const CharacterDetail = observer(({ id }: { id: number }) => {
             <Text>Species: {character.species}</Text>
             <Text>Gender: {character.gender}</Text>
             <Image src={character.image} alt={character.name} />
-            {/* Другие детали */}
         </Box>
     );
 });

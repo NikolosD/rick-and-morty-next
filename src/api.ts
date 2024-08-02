@@ -1,19 +1,19 @@
-import axios from 'axios';
 
+import axios from 'axios';
 const BASE_URL = 'https://rickandmortyapi.com/api';
 
-// Получение всех персонажей с возможностью пагинации
 export const fetchCharacters = async (page = 1) => {
     try {
         const response = await axios.get(`${BASE_URL}/character`, {
             params: { page },
         });
-        return response.data;
+        return response.data.results;
     } catch (error) {
         console.error('Failed to fetch characters:', error);
         throw error;
     }
 };
+
 
 // Получение данных о конкретном персонаже по его ID
 export const fetchCharacterById = async (id: number) => {
